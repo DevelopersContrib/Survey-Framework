@@ -18,6 +18,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config["url"] ?>/themes/<?php echo $this->config["theme"] ?>/css/widgets.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config["url"] ?>/static/js/flat/_all.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $this->config["url"] ?>/static/js/chosen.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $this->config["url"] ?>/themes/<?php echo $this->config["theme"] ?>/css/polls.css">
+	
     <!-- Javascript Files -->
     <script type="text/javascript" src="<?php echo $this->config["url"] ?>/static/js/jquery.min.js?v=1.11.0"></script>
     <script type="text/javascript" src="<?php echo $this->config["url"] ?>/static/js/chosen.min.js?v=0.8.5"></script>
@@ -39,6 +41,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
+	<?php echo $this->config["googleanalytics"] ?>
   </head>
   <body<?php echo Main::body_class() ?>>    
   <?php if($this->headerShow): ?>
