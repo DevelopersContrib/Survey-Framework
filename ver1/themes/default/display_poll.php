@@ -4,7 +4,8 @@
     <div class="centered poll">
       <div class="site_logo">
         <?php if (!empty($this->config["logo"])): ?>
-          <a href="<?php echo $this->config["url"] ?>"><img src="<?php echo $this->config["url"] ?>/static/<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>"></a>
+          <?php /*?><a href="<?php echo $this->config["url"] ?>"><img src="<?php echo $this->config["url"] ?>/static/<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>"></a><?php */?>
+		  <img style="100%" src="<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>">
         <?php else: ?>
           <h3><a href="<?php echo $this->config["url"] ?>"><?php echo $this->config["title"] ?></a></h3>
         <?php endif ?>

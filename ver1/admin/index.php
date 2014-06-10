@@ -1,5 +1,5 @@
 <?php
-
+	include (dirname(dirname(__FILE__))."/config.php");	
 	require_once("../includes/Config.php");	
 
 	// Set up some admin variables

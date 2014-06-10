@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 03, 2014 at 08:43 AM
+-- Generation Time: Jun 09, 2014 at 05:48 AM
 -- Server version: 5.5.36-cll
 -- PHP Version: 5.4.23
 
@@ -34,7 +34,14 @@ CREATE TABLE IF NOT EXISTS `page` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `menu` int(1) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `page`
+--
+
+INSERT INTO `page` (`id`, `title`, `slug`, `content`, `date`, `menu`) VALUES
+(1, 'About', 'about', '<p>Msurvey.com Survey Platform is part of the Global Ventures Network.</p>\r\n\r\n<p>Founded in 1996, Global Ventures is the worlds largest virtual Domain Development Incubator on the planet.</p>\r\n\r\n<p>We create and match great domain platforms like the survey platform with talented people, applications and resources to build successful, value driven, web-based businesses quickly. Join the fastest growing Virtual Business Network and earn Equity and Cowork with other great people making a difference by joining us here at Msurvey.com.</p>\r\n', '2014-06-05 02:09:53', 1);
 
 -- --------------------------------------------------------
 
@@ -78,19 +85,9 @@ CREATE TABLE IF NOT EXISTS `poll` (
   `expires` varchar(255) NOT NULL,
   `uniqueid` varchar(8) NOT NULL,
   `votes` bigint(20) NOT NULL DEFAULT '0',
+  `image_url` tinytext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
-
---
--- Dumping data for table `poll`
---
-
-INSERT INTO `poll` (`id`, `userid`, `open`, `question`, `options`, `results`, `choice`, `share`, `pass`, `theme`, `custom`, `count`, `created`, `expires`, `uniqueid`, `votes`) VALUES
-(3, 0, 1, 'Do you understand how gamification affects your community?', '{"1":{"answer":"no","count":1},"2":{"answer":"yes","count":0}}', 1, 0, 1, '', 'bs_red', '{"background":"","font":"null"}', 'off', '2014-06-02 02:35:10', '', '8ZySp', 1),
-(5, 1, 1, 'If you are going to fund a new startup? What will be the criteria for you to join the startup?', '[{"answer":"revenue model","count":1},{"answer":"creativity","count":0},{"answer":"usefullness","count":0}]', 1, 1, 1, '', 'bs_green', '{"background":"","font":"null"}', 'month', '2014-06-02 03:17:44', '', 'sdWTr', 1),
-(6, 0, 1, 'What is the best cms open source application or framework?', '{"1":{"answer":"Wordpress","count":0},"2":{"answer":"Joomla","count":0}}', 1, 1, 0, '', 'bs_blue', '{"background":"","font":"null"}', 'off', '2014-06-03 05:51:50', '', '5gCSs', 0),
-(4, 2, 1, 'Can you promote a Facebook page and get 1000 likes in two weeks?', '{"1":{"answer":"Yes","count":1},"2":{"answer":"No","count":0},"3":{"answer":"Maybe","count":0}}', 1, 0, 1, '', 'bs_green', '{"background":"","font":"null"}', 'off', '2014-06-02 02:56:27', '', 'L1leF', 1),
-(7, 3, 1, 'NBA Champion', '{"1":{"answer":"Miami Heat","count":0},"2":{"answer":"San Antonio Spurs","count":1},"3":{"answer":"Oklahoma","count":0},"4":{"answer":"Indiana Pacers","count":0}}', 1, 0, 1, '', '', '{"background":"","font":"null"}', 'off', '2014-06-03 06:50:59', '', 'YEh7X', 1);
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 -- --------------------------------------------------------
 
@@ -110,8 +107,8 @@ CREATE TABLE IF NOT EXISTS `setting` (
 
 INSERT INTO `setting` (`config`, `var`) VALUES
 ('url', 'http://msurvey.com'),
-('title', 'Msurvey - Create free surveys today'),
-('description', 'Create, Embed and Get Survey Results Today'),
+('title', 'Msurvey.com'),
+('description', 'Join our exclusive community of like minded people on msurvey.com'),
 ('captcha', '1'),
 ('captcha_public', '6Lcng_QSAAAAAKLeFe7cfR-9MUhuecw3wdbdAPdf '),
 ('captcha_private', '6Lcng_QSAAAAAJhAyUqrtLILM5q4RYNeYVC0B9zO '),
@@ -124,16 +121,17 @@ INSERT INTO `setting` (`config`, `var`) VALUES
 ('user_activation', '1'),
 ('smtp', '{"host":"","port":"","user":"social@msurvey.com","pass":"mschool3030"}'),
 ('export', '1'),
-('logo', 'auto_site_logo.png'),
+('logo', 'http://d2qcctj8epnr7y.cloudfront.net/images/2013/logo-msurvey1.png'),
 ('email', 'social@msurvey.com'),
 ('ads', '1'),
 ('ad728', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>\r\n<!-- survey framework - 728 x 90 -->\r\n<ins class="adsbygoogle"\r\n     style="display:inline-block;width:728px;height:90px"\r\n     data-ad-client="ca-pub-0390821261465417"\r\n     data-ad-slot="5078150302"></ins>\r\n<script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script>'),
 ('ad468', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>\r\n<!-- survey framework - 468 x 60 -->\r\n<ins class="adsbygoogle"\r\n     style="display:inline-block;width:468px;height:60px"\r\n     data-ad-client="ca-pub-0390821261465417"\r\n     data-ad-slot="6554883504"></ins>\r\n<script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script>'),
 ('ad300', '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>\r\n<!-- survey framework 300 x 250 -->\r\n<ins class="adsbygoogle"\r\n     style="display:inline-block;width:300px;height:250px"\r\n     data-ad-client="ca-pub-0390821261465417"\r\n     data-ad-slot="8031616703"></ins>\r\n<script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script>'),
 ('theme', 'default'),
-('style', 'green'),
+('style', ''),
 ('lang', ''),
-('fonts', '[""]');
+('fonts', '[""]'),
+('googleanalytics', '<script>\r\n  (function(i,s,o,g,r,a,m){i[''GoogleAnalyticsObject'']=r;i[r]=i[r]||function(){\r\n  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\r\n  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\r\n  })(window,document,''script'',''//www.google-analytics.com/analytics.js'',''ga'');\r\n\r\n  ga(''create'', ''UA-47677208-2'', ''msurvey.com'');\r\n  ga(''send'', ''pageview'');\r\n\r\n</script>');
 
 -- --------------------------------------------------------
 
@@ -163,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`, `banned`, `membership`, `date`, `last_payment`, `expires`, `admin`, `ga`, `auth_key`, `unique_key`) VALUES
-(1, '', 'social@msurvey.com', '$2a$08$M9WZDbsMaJUrcu4ih3P4VeWE3xSidoolIJ0wTSXr6qnO8cK6P.OEe', 0, 'pro', '2014-06-02 02:24:26', '0000-00-00 00:00:00', '2114-06-01 19:24:26', 1, '', '$2a$08$TQ0sdmYABO3ug.5qF6QipOgw2gUAOsOhCLmhNZTZIabUc/gYp0b8G', 'AFTUey9iWNSBXgI2kx7v'),
+(1, '', 'admin@contrib.com', '$2a$08$M9WZDbsMaJUrcu4ih3P4VeWE3xSidoolIJ0wTSXr6qnO8cK6P.OEe', 0, 'pro', '2014-06-02 02:24:26', '0000-00-00 00:00:00', '2114-06-01 19:24:26', 1, '', '$2a$08$TQ0sdmYABO3ug.5qF6QipOgw2gUAOsOhCLmhNZTZIabUc/gYp0b8G', 'AFTUey9iWNSBXgI2kx7v'),
 (2, '', 'maidabarrientos@gmail.com', '$2a$08$Eu41/XlLR8.BjnNaySpyBOsVeMClkENjGJhNzOskIoZ.ui8RVoaEe', 0, 'free', '2014-06-02 02:51:21', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '', '$2a$08$CCWrkDgVifDs0NNgLNEMOeTgEvOomk.SBkFxw0XtzA.83A86Cw2fG', 'Mko8dnIvqCiAMa5fR5AP'),
 (3, '', 'ronan.asia@yahoo.com', '$2a$08$mDcvaMBGsfq7fgeGBfSPa.CTGPRjQAscAvJ3VECQY0223kF9tKvn6', 0, 'free', '2014-06-03 06:35:44', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '', '$2a$08$tDlLwMVqSAJ.6qRJaFrT5.BCAs5hwHb91VKjW2pKbK7WFt7U32R9a', 'H0BQH2L5fQDvYLHXJMMQ');
 
@@ -183,17 +181,7 @@ CREATE TABLE IF NOT EXISTS `vote` (
   `source` text NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `vote`
---
-
-INSERT INTO `vote` (`id`, `pollid`, `polluserid`, `vote`, `ip`, `country`, `source`, `date`) VALUES
-(4, 5, 1, '1', '120.28.195.174', 'PH', '', '2014-06-03 03:11:32'),
-(2, 4, 2, '1', '202.137.120.23', 'PH', '', '2014-06-02 03:12:27'),
-(3, 3, 0, '1', '202.137.120.23', 'PH', '', '2014-06-02 03:14:39'),
-(5, 7, 3, '2', '120.28.195.174', 'PH', '', '2014-06-03 07:10:38');
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

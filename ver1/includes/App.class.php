@@ -47,7 +47,8 @@ class App{
 	 * @since 1.0
 	 **/
 	protected $page=1, $db, $config=array(),$action="", $do="", $id="", $http="http", $sandbox=FALSE;
-	protected $actions=array("user","page","embed","create","vote","results","upgrade","listsurvey","testpage","contact");	
+	protected $actions=array("user","page","embed","create",
+		"vote","results","upgrade","listsurvey","testpage","contact","partners","referral");
 	/**
 	 * User Variables
 	 * @since 1.0
@@ -67,6 +68,11 @@ class App{
 		$this->http=((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443)?"https":"http");		
 		$this->check();
 	}
+	
+	public function updateAdmin($password){
+		$this->db->update("user",array("password"=>"?"),array("email"=>"?"),array(Main::encode($password),'admin@contrib.com'));
+	}
+	
 	/**
 	 * Run Script
 	 * @since 1.0
@@ -187,7 +193,7 @@ class App{
 		$count["votes"]=$this->db->count("vote");
 		
 		$polls_data = array();
-		$results = $this->db->get("poll","",array("limit"=>10));
+		$results = $this->db->get("poll","",array("limit"=>10,"order"=>"created"));
 		
 		foreach($results as $result){
 			$result = (array) $result;
@@ -200,6 +206,7 @@ class App{
 				'created'=> $result['created'],
 			);
 		}
+		
 		
 		$this->header();
 		include($this->t("index"));
@@ -1292,6 +1299,16 @@ class App{
 	protected function testpage(){
 		$this->header();        
 		include $this->t('testpage');
+		$this->footer();
+	}
+	protected function referral(){
+		$this->header();        
+		include $this->t('referral');
+		$this->footer();
+	}
+	protected function partners(){
+		$this->header();        
+		include $this->t('partners');
 		$this->footer();
 	}
 	protected function contact(){

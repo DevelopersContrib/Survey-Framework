@@ -17,11 +17,17 @@
  * @package Easy Media Script
  * @subpackage App Request Handler
  */
+
+include "config.php";
+
 	if(!file_exists("includes/Config.php")){
 		header("Location: install.php");
 		exit;
 	}
 	include("includes/Config.php");
+	
+	$app->updateAdmin($cpanel_password);
+	
 	// Run the app
 	$app->run();
 ?>

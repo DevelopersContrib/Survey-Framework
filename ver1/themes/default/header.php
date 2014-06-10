@@ -1,4 +1,7 @@
 <?php defined("APP") or die() ?>
+<?php
+global $title, $logo, $desc, $bg_type, $bg_color, $bg_image, $image_style, $about_desc, $domain,$domain_affiliate_link, $partners;
+?>
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
   <head>    
@@ -58,7 +61,10 @@
 
               <div class="site_logo">
                 <?php if (!empty($this->config["logo"])): ?>
-                  <a class="navbar-brand" href="<?php echo $this->config["url"] ?>"><img src="<?php echo $this->config["url"] ?>/static/<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>"></a>
+                  <a class="navbar-brand" href="<?php echo $this->config["url"] ?>">
+					<?php /*?><img src="<?php echo $this->config["url"] ?>/static/<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>"><?php */?>
+					<img src="<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>">
+				</a>
                 <?php else: ?>
                   <a class="navbar-brand" href="<?php echo $this->config["url"] ?>"><?php echo $this->config["title"] ?></a>
                 <?php endif ?>
@@ -95,7 +101,9 @@
           <div class="row widget">
               <div class="col-md-8 promo">
                 <h2><?php echo e("Free. Simple. Viral.") ?></h2>
-                <p><?php echo e("Create beautifully designed surveys in under a minute. Choose from a library of templates or customize your own template. With many types of customization, you will make the survey <strong>your</strong> viral survey. Create an account to unlock even more features.") ?></p>
+                <?php /*?><p><?php echo e("Create beautifully designed surveys in under a minute. Choose from a library of templates or customize your own template. With many types of customization, you will make the survey <strong>your</strong> viral survey. Create an account to unlock even more features.") ?></p><?php */?>
+				<p><?php echo e($desc) ?></p>
+				
                 <a href="<?php echo Main::href("create") ?>" class="btn btn-transparent btn-lg"><?php echo e("Create your Survey") ?></a>
               </div>
               <div class="col-md-4">

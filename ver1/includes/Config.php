@@ -1,11 +1,17 @@
 <?php 
-
 // Database Configuration
   $dbinfo= array (
     "host" => 'localhost',        // Your mySQL Host (usually Localhost)
-    "db" => 'msurvey_survey',            // The database where you have dumped the included sql file
-    "user" => 'msurvey_admin',        // Your mySQL username
-    "password" => 'bing2kroy',    //  Your mySQL Password 
+	
+    // "db" => 'msurvey_survey',            // The database where you have dumped the included sql file
+    // "user" => 'msurvey_admin',        // Your mySQL username
+    // "password" => 'bing2kroy',    //  Your mySQL Password 
+	
+	"db" => $db,
+    "user" => $cpanel_username,
+    "password" => $cpanel_password,
+
+	
     "prefix" => ''      // Prefix for your tables e.g. short_ if you are using same db for multiple scripts
   );
 

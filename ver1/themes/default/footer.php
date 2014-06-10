@@ -4,6 +4,8 @@
     <div class="container">
       <footer class="row">
         <div class="pull-right footer"> 
+			<a href="/partners">Partner with us</a>
+			<a href="/referral">Referral</a>
           <?php foreach ($pages as $page): ?>
               <a href="<?php echo Main::href("page/{$page->slug}") ?>"><?php echo $page->title ?></a>
           <?php endforeach ?>
