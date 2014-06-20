@@ -73,7 +73,7 @@
             <li><a href="<?php echo Main::ahref("payments") ?>"><span class="glyphicon glyphicon-usd"></span> Payments</a></li>
             <li><a href="<?php echo Main::ahref("pages") ?>"><span class="glyphicon glyphicon-book"></span> Pages</a></li>
             <li><a href="<?php echo Main::ahref("settings") ?>"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-            <li><a href="<?php echo Main::ahref("help") ?>"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+            <?php /*?><li><a href="<?php echo Main::ahref("help") ?>"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li><?php */?>
           </ul>
         </div>
         <div class="col-md-10 main">

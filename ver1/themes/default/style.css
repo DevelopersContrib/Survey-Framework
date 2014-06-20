@@ -540,7 +540,10 @@ header .navbar {
 header .navbar .navbar-brand {
   padding-top: 5px;
 }
-header .navbar .navbar-brand img{
+/*header .navbar .navbar-brand img{
+  height:50px;
+}*/
+header .site_logo img{
   height:50px;
 }
 
@@ -796,19 +799,28 @@ section .content.noborder .alt {
 }
 section .site_logo {
   margin-top: 120px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   text-align: center;
   background: transparent;
 }
 section .site_logo a {
   color: #fff;
-  font-size: 30px;
+  /*font-size: 30px;*/
 }
 section .site_logo img {
   background: transparent;
   border-radius: 2px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
+}
+section  .site_logo h3 a::before {
+content:url('http://icons.iconarchive.com/icons/ahmadhania/spherical/32/select-text-icon.png');
+vertical-align:-8px;
+}
+section  .site_logo h3 a {
+font-size:28px;
+text-shadow: 1px 1px 4px black, 0 0 1em #1F5399, 0 0 0.4em #1F5399;
+color: white;
 }
 footer {
   margin-top: 50px;

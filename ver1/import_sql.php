@@ -51,4 +51,14 @@ $q->execute(array($desc,'description'));
 $sql = " Update `setting` set `var`=? where `config`=?";
 $q = $conn->prepare($sql);
 $q->execute(array($logo,'logo')); 
+
+$sql = " Update `page` set `content`=? where `id`=?";
+$q = $conn->prepare($sql);
+$q->execute(array('<p>'.ucwords($domain).' Survey Platform is part of the Global Ventures Network.</p><p>Founded in 1996, Global Ventures is the worlds largest virtual Domain Development Incubator on the planet.</p>\r\n\r\n<p>We create and match great domain platforms like the survey platform with talented people, applications and resources to build successful, value driven, web-based businesses quickly. Join the fastest growing Virtual Business Network and earn Equity and Cowork with other great people making a difference by joining us here at Msurvey.com.</p>',1)); 
+
+if(!empty($account_ga)){
+	$sql = " Update `setting` set `var`=? where `config`=?";
+	$q = $conn->prepare($sql);			
+	$q->execute(array($account_ga,'googleanalytics')); 
+}
 ?>

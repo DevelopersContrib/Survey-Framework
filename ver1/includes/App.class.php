@@ -1319,7 +1319,7 @@ class App{
 	protected function listsurvey(){
 		header("Content-type: application/json");
 		$return = array();
-		$results = $this->db->get("poll");
+		$results = $this->db->get("poll","",array("order"=>"created"));
 		
 		foreach($results as $result){
 			$result = (array) $result;
@@ -1331,6 +1331,7 @@ class App{
 				'uniqueid'=> $result['uniqueid'],
 				'question'=> $result['question'],
 				'email'=> $email,
+				'votes'=>$result['votes']
 			);
 		}
 		

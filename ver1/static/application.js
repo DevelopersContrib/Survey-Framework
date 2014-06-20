@@ -114,6 +114,7 @@ $(function() {
   /**
    * Load Selectize
    **/
+   if(window.location.pathname!="/partners")
     $('select').chosen();   
   /**
    * Custom Radio Box

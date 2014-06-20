@@ -70,3 +70,15 @@
 .user-by,.pq-date{
     display: block;
 }
+.site_logo a.navbar-brand::before {
+content:url('http://d2qcctj8epnr7y.cloudfront.net/images/Forum-Poll-topic-icon2.png');
+vertical-align:-18px;
+margin-right:3px;
+}
+.site_logo a.navbar-brand {
+font-size:22px;
+text-shadow: 1px 1px 4px black, 0 0 1em #1F5399, 0 0 0.4em #1F5399;
+color: white;
+margin-bottom: 20px;
+margin-top: -10px;
+}

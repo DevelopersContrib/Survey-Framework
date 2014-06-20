@@ -61,7 +61,7 @@ global $title, $logo, $desc, $bg_type, $bg_color, $bg_image, $image_style, $abou
 
               <div class="site_logo">
                 <?php if (!empty($this->config["logo"])): ?>
-                  <a class="navbar-brand" href="<?php echo $this->config["url"] ?>">
+                  <a class="nv-logo" href="<?php echo $this->config["url"] ?>">
 					<?php /*?><img src="<?php echo $this->config["url"] ?>/static/<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>"><?php */?>
 					<img src="<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>">
 				</a>
@@ -139,12 +139,20 @@ global $title, $logo, $desc, $bg_type, $bg_color, $bg_image, $image_style, $abou
         <div class="navbar" role="navigation">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="glyphicon glyphicon-align-justify"></span>
                   </button>
+                  <div class="site_logo">
+                <?php if (!empty($this->config["logo"])): ?>
+                  <a class="nv-logo" href="<?php echo $this->config["url"] ?>">
+					<img src="<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>">
+				</a>
+                <?php else: ?>
                   <a class="navbar-brand" href="<?php echo $this->config["url"] ?>"><?php echo $this->config["title"] ?></a>
+                <?php endif ?>
+              </div> 
                 </div>            
               </div>
               <div class="navbar-collapse collapse">                  

@@ -8,7 +8,7 @@
           <a href="<?php echo $this->config["url"] ?>">
 		  <img style="width:400px" src="<?php echo $this->config["logo"] ?>" alt="<?php echo $this->config["title"] ?>"></a>
         <?php else: ?>
-          <h3><a href="<?php echo $this->config["url"] ?>"><?php echo $this->config["title"] ?></a></h3>
+          <a class="navbar-brand" href="<?php echo $this->config["url"] ?>"><?php echo $this->config["title"] ?></a>
         <?php endif ?>
       </div> 
 

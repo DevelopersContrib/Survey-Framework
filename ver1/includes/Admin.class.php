@@ -1006,7 +1006,12 @@ class Admin{
       $_POST["smtp"]=json_encode($_POST["smtp"]);
       // Encode Fonts
       $_POST["fonts"]=Main::fontf($_POST["fonts"]);
-
+		$_POST["ad728"]=addslashes ($_POST["ad728"]);
+		$_POST["ad468"]=addslashes ($_POST["ad468"]);
+		$_POST["ad300"]=addslashes ($_POST["ad300"]);
+		
+		$_POST["googleanalytics"]=addslashes ($_POST["googleanalytics"]);
+	
       // Update Config
       foreach($_POST as $config => $var){
         $this->db->update("setting",array("var"=>$var),array("config"=>$config));

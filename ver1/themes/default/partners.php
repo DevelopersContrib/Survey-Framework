@@ -1,5 +1,21 @@
 <?php defined("APP") or die() ?>
+<link rel="stylesheet" media="screen" type="text/css" href="/themes/default/serviceforms/css/partner.css">
 <style type="text/css">
+	.partnerMainCont {
+		background: none repeat scroll 0 0 #fff;
+		border-radius: 10px;
+		color: black;
+		float: left;
+		font-family: 'Open Sans',sans-serif;
+		height: 466px;
+		margin-left: 40px;
+		padding: 5px 10px;
+		text-align: left;
+		width: 400px;
+	}
+	#partner_step1{
+		text-align:center;
+	}
 	.blckBckgrnd{
 		background: rgba(0,0,0,0.5);
 		padding: 20px 15px;
@@ -108,6 +124,25 @@
     .logo-img{
     	display: inline-block;
     }
+	
+	select, textarea, input[type="text"], input[type="password"]{
+		background-color: #ffffff;
+		border: 1px solid #cccccc;
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+		transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s
+		border-radius: 4px;
+		color: #555555;
+		display: inline-block;
+		font-size: 14px;
+		height: 20px;
+		line-height: 20px;
+		margin-bottom: 10px;
+		padding: 4px 6px;
+		vertical-align: middle;
+		box-sizing: border-box;
+		min-height: 30px;
+		width: 100%;
+	}
 </style>
 <?php
 global $title, $logo, $desc, $bg_type, $bg_color, $bg_image, $image_style, $about_desc, $domain, $partners;
@@ -236,3 +271,66 @@ global $title, $logo, $desc, $bg_type, $bg_color, $bg_image, $image_style, $abou
 		</div>
 	</div>
 </section>
+
+	
+	<style type="text/css">
+	.modal-body {
+		max-height: 480px !important;
+		padding-left:20% !important;
+	}
+</style>
+<?php 
+	include('serviceforms/variables.php'); 
+?>
+<div class="modal hide fade" id="form-container">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="form-header"></h3>
+  </div>
+  <div class="modal-body">
+    <div id="form-container-partner" style="display:none;">
+		<?include('serviceforms/partner.php')?>
+	</div>
+	<div id="form-container-inquire" style="display:none;">
+		<?include('serviceforms/contact_us.php')?>
+	</div>
+	<div id="form-container-staffing" style="display:none;">
+		<?include('serviceforms/staffing.php')?>
+	</div>
+  </div>
+  <div class="modal-footer">
+    &nbsp;
+  </div>
+</div>	
+
+
+	<script type="text/javascript">
+	$(function(){
+		$('button#show_partner_dialog, a#_partner').click(function(){
+			hideOtherForms();
+			$('#form-header').text("Submit Partnership Application");
+			$('#form-container-partner').css('display','block');
+			$(this).modal({content:$('#form-container .modal-body').html(),title:'Partner',confimation:1});
+		});
+		
+		$('a#_contactus').click(function(){
+			hideOtherForms();
+			$('#form-header').text("Send Inquiry");
+			$('#form-container-inquire').css('display','block');
+		});
+		
+		$('a#_apply').click(function(){
+			hideOtherForms();
+			$('#form-header').text("Submit Team Application");
+			$('#form-container-staffing').css('display','block');
+		});
+			
+	});
+	
+	function hideOtherForms(){
+		$('#form-container-partner').css('display','none');
+		$('#form-container-inquire').css('display','none');
+		$('#form-container-staffing').css('display','none');
+	}
+
+</script>	
